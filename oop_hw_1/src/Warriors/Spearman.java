@@ -22,24 +22,6 @@ public class Spearman extends BaseWarrior{
         return this.getClass() + ": " + this.name;
     }
 
-    private double getDistance(BaseWarrior target){
-        Place a = this.position;
-        Place b = target.position;
-        int ab = ((b.x - a.x)^2 + (b.y - a.y)^2);
-        return Math.sqrt((double)ab);
-    }
-    protected BaseWarrior findNear(List<BaseWarrior> enemies){
-        double minDistance = this.getDistance(enemies.getFirst());
-        BaseWarrior nearEnemy = enemies.getFirst();
-        for (BaseWarrior enemy : enemies){
-            if (this.getDistance(enemy) < minDistance) {
-                minDistance = this.getDistance(enemy);
-                nearEnemy = enemy;
-            }
-        }
-        return nearEnemy;
-    }
-
     @Override
     public void step(ArrayList<BaseWarrior> enemies) {
         if (this.health > 0 && this.arrows > 0){

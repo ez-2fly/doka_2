@@ -1,5 +1,7 @@
 package Warriors;
 
+import java.util.List;
+
 abstract public class BaseWarrior implements Step{
     protected String name;
     protected int experience;
@@ -46,5 +48,23 @@ abstract public class BaseWarrior implements Step{
 
     public int getInitiative(){
         return this.initiative;
+    }
+
+    private double getDistance(BaseWarrior target){
+        Place a = this.position;
+        Place b = target.position;
+        int ab = ((b.x - a.x)^2 + (b.y - a.y)^2);
+        return Math.sqrt((double)ab);
+    }
+    protected BaseWarrior findNear(List<BaseWarrior> enemies){
+        double minDistance = this.getDistance(enemies.getFirst());
+        BaseWarrior nearEnemy = enemies.getFirst();
+        for (BaseWarrior enemy : enemies){
+            if (this.getDistance(enemy) < minDistance) {
+                minDistance = this.getDistance(enemy);
+                nearEnemy = enemy;
+            }
+        }
+        return nearEnemy;
     }
 }
