@@ -7,4 +7,8 @@ public class Monk extends Sorcerer {
         super(name, position);
     }
 
+    @Override
+    public String getInfo() {
+        return "Монах";
+    }
 }

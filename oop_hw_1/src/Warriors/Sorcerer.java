@@ -14,12 +14,12 @@ public class Sorcerer extends BaseWarrior {
     }
 
     @Override
-    public String toString() {
-        return this.getClass() + ": " + this.name;
+    public void step(ArrayList<BaseWarrior> enemies) {
+
     }
 
     @Override
-    public void step(ArrayList<BaseWarrior> enemies) {
-
+    public String getInfo() {
+        return "Колдун";
     }
 }

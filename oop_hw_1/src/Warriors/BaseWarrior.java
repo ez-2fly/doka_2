@@ -1,5 +1,6 @@
 package Warriors;
 
+import java.lang.reflect.Array;
 import java.util.List;
 
 abstract public class BaseWarrior implements Step{
@@ -17,6 +18,11 @@ abstract public class BaseWarrior implements Step{
         this.level = 1;
         this.experience = 0;
         this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return "name: " + name + " \u2665: " + health + " armor: " + armor + " damage: " + damage;
     }
 
     // Если у воина есть единицы брони, то они теряются при атаке на него,
@@ -42,9 +48,7 @@ abstract public class BaseWarrior implements Step{
         if (this.experience >= 100) this.level++;
         else System.out.println("Not enough experience!");
     }
-    public void getInfo(){
-        System.out.format("%s: health - %d, armor - %d, damage - %d", this.name, this.health, this.armor, this.damage);
-    }
+    public abstract String getInfo();
 
     public int getInitiative(){
         return this.initiative;
@@ -66,5 +70,16 @@ abstract public class BaseWarrior implements Step{
             }
         }
         return nearEnemy;
+    }
+
+    public int[] getPosition() {
+        int[] res = new int[2];
+        res[0] = this.position.x;
+        res[1] = this.position.y;
+        return res;
+    }
+
+    public int getHealth(){
+        return this.health;
     }
 }

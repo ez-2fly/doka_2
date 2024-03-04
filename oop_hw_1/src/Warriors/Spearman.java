@@ -18,11 +18,6 @@ public class Spearman extends BaseWarrior{
     }
 
     @Override
-    public String toString() {
-        return this.getClass() + ": " + this.name;
-    }
-
-    @Override
     public void step(ArrayList<BaseWarrior> enemies) {
         if (this.health > 0 && this.arrows > 0){
             BaseWarrior target = this.findNear(enemies);
@@ -30,5 +25,10 @@ public class Spearman extends BaseWarrior{
             this.arrows--;
         }
         else return;
+    }
+
+    @Override
+    public String getInfo() {
+        return "Ведьмак";
     }
 }

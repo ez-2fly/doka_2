@@ -7,4 +7,9 @@ public class Crossbowman extends Spearman {
         this.health = 55;
         this.damage = 35;
     }
+
+    @Override
+    public String getInfo() {
+        return "Арбалетчик";
+    }
 }

@@ -13,4 +13,9 @@ public class Sniper extends Robber {
         this.health = 55;
         this.initiative = 2;
     }
+
+    @Override
+    public String getInfo() {
+        return "Снайпер";
+    }
 }

@@ -8,5 +8,4 @@ public class Place {
         this.x = x;
         this.y = y;
     }
-
 }

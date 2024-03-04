@@ -15,11 +15,6 @@ public class Robber extends BaseWarrior {
     }
 
     @Override
-    public String toString() {
-        return this.getClass() + ": " + this.name;
-    }
-
-    @Override
     public void step(ArrayList<BaseWarrior> enemies) {
         if (this.health <= 0) return;
         BaseWarrior target = this.findNear(enemies);
@@ -28,15 +23,14 @@ public class Robber extends BaseWarrior {
     }
 
     private void movement(BaseWarrior target){
-        int dx = this.position.x - target.position.x;
-        int dy = this.position.y - target.position.y;
-        if (dx > dy){
-            if (dx < 0) this.position.x++;
-            else this.position.x--;
-        }
-        else {
-            if (dy < 0) this.position.y++;
-            else this.position.y--;
-        }
+        int dx = Math.abs(this.position.x - target.position.x);
+        int dy = Math.abs(this.position.y - target.position.y);
+        if (dx > dy) this.position.x++;
+        else this.position.y++;
+    }
+
+    @Override
+    public String getInfo() {
+        return "Разбойник";
     }
 }
