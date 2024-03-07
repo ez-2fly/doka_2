@@ -31,6 +31,6 @@ public class Robber extends BaseWarrior {
 
     @Override
     public String getInfo() {
-        return "Разбойник";
+        return "Robber";
     }
 }

@@ -16,6 +16,6 @@ public class Sniper extends Robber {
 
     @Override
     public String getInfo() {
-        return "Снайпер";
+        return "Sniper";
     }
 }

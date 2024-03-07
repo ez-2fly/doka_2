@@ -10,6 +10,6 @@ public class Crossbowman extends Spearman {
 
     @Override
     public String getInfo() {
-        return "Арбалетчик";
+        return "Crossbowman";
     }
 }

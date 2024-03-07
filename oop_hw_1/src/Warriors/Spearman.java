@@ -14,7 +14,7 @@ public class Spearman extends BaseWarrior{
         this.health = 60;
         this.damage = 30;
         this.initiative = 3;
-        int arrows = 20; // дал ему 20 стрел по дефолту, не знаю, где он должен их брать
+        int arrows = 0;
     }
 
     @Override
@@ -29,6 +29,8 @@ public class Spearman extends BaseWarrior{
 
     @Override
     public String getInfo() {
-        return "Ведьмак";
+        return "Spearman";
     }
 }
+
+

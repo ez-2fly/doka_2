@@ -9,6 +9,6 @@ public class Monk extends Sorcerer {
 
     @Override
     public String getInfo() {
-        return "Монах";
+        return "Monk";
     }
 }

@@ -15,12 +15,16 @@ public class Peasant extends BaseWarrior {
     }
 
     @Override
-    public void step(ArrayList<BaseWarrior> enemies) {
-
+    public void step(ArrayList<BaseWarrior> allies) {
+        for (BaseWarrior unit : allies){
+            if (unit.getClass() == Crossbowman.class || unit.getClass() == Spearman.class) {
+                ((Spearman) unit).arrows++;
+            }
+        }
     }
 
     @Override
     public String getInfo() {
-        return "Фермер";
+        return "Peasant";
     }
 }
